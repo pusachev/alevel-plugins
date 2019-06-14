@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Pavel Usachev <webcodekeeper@hotmail.com>
+ * @copyright Copyright (c) 2019, Pavel Usachev
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="pluginTestCommand" xsi:type="object">ALevel\Plugins\Console\Command\PluginTestCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="ALevel\Plugins\Console\Command\PluginTestCommand">
+        <plugin
+                name="pluginA"
+                type="ALevel\Plugins\Plugin\Console\Command\PluginA"
+                sortOrder="0"
+                disabled="false"
+        />
+        <plugin
+                name="pluginC"
+                type="ALevel\Plugins\Plugin\Console\Command\PluginC"
+                sortOrder="0"
+                disabled="false"
+        />
+        <plugin
+                name="pluginB"
+                type="ALevel\Plugins\Plugin\Console\Command\PluginB"
+                sortOrder="0"
+                disabled="false"
+        />
+    </type>
+</config>
